@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PEs06.1 — этапы выполнения</title>
+  <style>
+    :root {
+      font-family: Inter, system-ui, sans-serif;
+      color: #e8eaf2;
+      background: #0b1020;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 36px;
+      background: linear-gradient(145deg, #0b1020, #171d35);
+    }
+
+    main {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    .lead { margin: 0 0 28px; color: #aeb6d5; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    section {
+      padding: 22px;
+      border: 1px solid #303a63;
+      border-radius: 16px;
+      background: rgb(19 25 48 / 0.92);
+      box-shadow: 0 16px 45px rgb(0 0 0 / 0.25);
+    }
+
+    h2 { margin: 0 0 14px; font-size: 20px; color: #a8b3ff; }
+    pre { margin: 0; white-space: pre-wrap; font: 15px/1.65 Consolas, monospace; }
+    .ok { color: #65e6a5; }
+    .wide { grid-column: 1 / -1; }
+    ul { margin: 0; padding-left: 22px; line-height: 1.75; }
+
+    footer { margin-top: 24px; color: #919abc; font-size: 14px; }
+
+    @media (max-width: 760px) {
+      body { padding: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .wide { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>PEs06.1 — Claude Code</h1>
+    <p class="lead">Проверочный лист этапов. Все значения получены реальными командами 10.10.2026.</p>
+
+    <div class="grid">
+      <section>
+        <h2>1. Подготовка среды</h2>
+        <pre><span class="ok">✓</span> git --version     → 2.39.0.windows.1
+<span class="ok">✓</span> node -v           → v22.14.0
+<span class="ok">✓</span> npm -v            → 11.6.0
+<span class="ok">✓</span> code --version    → 1.131.0 x64</pre>
+      </section>
+
+      <section>
+        <h2>2. Claude Code</h2>
+        <pre><span class="ok">✓</span> claude --version → 2.1.293
+<span class="ok">✓</span> Авторизация       → активна
+<span class="ok">✓</span> Способ входа      → claude.ai
+<span class="ok">✓</span> Подписка          → Pro</pre>
+      </section>
+
+      <section class="wide">
+        <h2>3. Проект создан агентом</h2>
+        <ul>
+          <li><strong>index.html</strong> — семантичная страница с таблицей топ-10.</li>
+          <li><strong>styles.css</strong> — адаптивная вёрстка, светлая и тёмная темы.</li>
+          <li><strong>app.js</strong> — CoinGecko API, автообновление раз в 60 секунд, обработка ошибок.</li>
+          <li><strong>README.md</strong> — инструкция запуска и описание проверки.</li>
+        </ul>
+      </section>
+
+      <section class="wide">
+        <h2>4. Фактическая проверка</h2>
+        <pre><span class="ok">✓</span> node --check app.js → синтаксических ошибок нет
+<span class="ok">✓</span> Локальный HTTP-сервер → запущен на 127.0.0.1:4173
+<span class="ok">✓</span> CoinGecko API → получены 10 актуальных записей
+<span class="ok">✓</span> Безопасный вывод → textContent и DOM API, без innerHTML</pre>
+      </section>
+    </div>
+
+    <footer>Учебный проект курса «Промпт-инжиниринг 3.0» на Zerocoder.</footer>
+  </main>
+</body>
+</html>

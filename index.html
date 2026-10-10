@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Топ-10 криптовалют по рыночной капитализации в реальном времени">
+  <title>Крипто-трекер — топ-10 криптовалют</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Крипто-трекер</h1>
+      <p class="subtitle">Топ-10 криптовалют по рыночной капитализации</p>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="panel" aria-labelledby="rates-title">
+      <div class="toolbar">
+        <h2 id="rates-title">Курсы в USD</h2>
+        <div class="toolbar__actions">
+          <p class="updated">
+            Обновлено: <time id="last-updated" datetime="">—</time>
+          </p>
+          <button id="refresh-btn" class="btn" type="button">
+            <span class="btn__icon" aria-hidden="true">⟳</span>
+            Обновить
+          </button>
+        </div>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <div id="error" class="error" role="alert" hidden>
+        <p id="error-text"></p>
+        <button id="retry-btn" class="btn btn--secondary" type="button">Повторить</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="rates-table" class="rates" aria-describedby="table-note" aria-busy="true">
+          <caption class="visually-hidden">Топ-10 криптовалют по рыночной капитализации</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="num">#</th>
+              <th scope="col">Название</th>
+              <th scope="col">Тикер</th>
+              <th scope="col" class="num">Цена</th>
+              <th scope="col" class="num">24 ч</th>
+              <th scope="col" class="num">Капитализация</th>
+            </tr>
+          </thead>
+          <tbody id="rates-body"></tbody>
+        </table>
+      </div>
+
+      <p id="table-note" class="note">
+        Данные обновляются автоматически раз в 60 секунд.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Данные: <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer">CoinGecko API</a>. Учебный проект Zerocoder.</p>
+    </div>
+  </footer>
+</body>
+</html>
